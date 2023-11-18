@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Agbalumo">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      .menuItems {
+        margin-top: 100px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+      }
+
+      .menuItems p {
+        padding-left: 50px;
+        padding-right: 50px;
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 20px;
+      }
+
+      .menuItems h1 {
+        background-color: #ffdab9;
+        border-top: 20px solid white;
+        color: #800000;
+        font-size: 28px;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        width: 50vw;
+      }
+
+      .menuItems p {
+        background-color: darkred;
+        color: white;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .menu {
+        overflow: auto;
+      }
+
+      .menu img {
+        width: 50vw;
+        min-width: 500px;
+      }
+
+      .container h1 {
+        background-color: #ffdab9;
+        border-top: 20px solid white;
+        color: #800000;
+        font-size: 28px;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        width: 50vw;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #a52a2a;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #854a4a;
+      }
+
+      @media and screen and (max-width: 1000) {
+        .confirmation h2 {
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbarExclusive">
+      <div class="overlay">
+        <div id="navbar-right">
+          <a href="IndexPage.html">Home</a>
+          <a class="active" href="MenuPage.html">Menu</a>
+          <a href="AboutPage.html">About Us</a>
+          <a href="ContactPage.html">Contact Us</a>
+        </div>
+        <a href="Home.html">
+          <img src="..\FullStackDevelopmentProject\Images\logo.png" alt="Bake & Bloom Logo" id="logo">
+        </a>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="miniNav">
+      <button id="mbutton" class="icon" onclick="navButton()">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="topnav" id="myTopnav">
+        <a href="IndexPage.html">Home</a>
+        <a class="active" href="MenuPage.html">Menu</a>
+        <a href="AboutPage.html">About Us</a>
+        <a href="ContactPage.html">Contact Us</a>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="menuItems" style="">
+      <center><h1>Our Items</h1><center>
+      <p>To place an online order, call: +1 (123) 576-9395</p>
+      <div class="menu">
+        <center>
+          <img src="..\FullStackDevelopmentProject\Images\Menu.png" alt="MenuCard">
+        </center>
+      </div>
+    </div>
+    <hr>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="container">
+      <center><h1>Custom Cakes</h1><center>
+      <p>Cake Models are available, contact us to know more</p>
+      <form onsubmit="placeOrder(); return false;" id="orderForm">
+        <label for="cakeSize">Size:</label>
+        <select id="cakeSize" name="cakeSize">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+        <label for="cakeFlavor">Flavor:</label>
+        <input type="text" id="cakeFlavor" name="cakeFlavor" placeholder="Enter cake flavor">
+        <label>Optional Items:</label>
+        <label>
+          <input type="checkbox" name="withEggs"> With Eggs </label>
+        <label for="creamUsed">Cream Used:</label>
+        <select id="creamType" name="creamType">
+          <option value="vanilla">Vanilla</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="strawberry">Strawberry</option>
+          <option value="cream-cheese">Cream Cheese</option>
+          <option value="buttercream">Buttercream</option>
+          <option value="whipped-cream">Whipped Cream</option>
+          <option value="lemon">Lemon</option>
+          <option value="hazelnut">Hazelnut</option>
+        </select>
+        <label for="Shape">Cream Used:</label>
+        <select id="creamType" name="creamType">
+          <option value="cirlce">Circle</option>
+          <option value="square">Square</option>
+          <option value="rectangle">Rectangle</option>
+          <option value="triangle">Triangle</option>
+        </select>
+        <label for="toppings">Toppings: (*Inclusion of certain toppings are subject to availability and may be charged extra)</label>
+        <input type="text" id="toppings" name="toppings" placeholder="Enter toppings">
+        <button type="submit">Submit Order</button>
+      </form>
+      <div class="confirmation" style="background-color: darkgreen; display: none; padding:20px; margin-bottom: 20px; border-radius: 5px;" id="confirmation">
+        <h2 style="color:white">Your order has been placed!</h2>
+        <center>
+          <button type="button" onclick="anotherOne()" name="button" style="color: darkgreen; background-color: white;">Place Another One?</button>
+        </center>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Contact Us</h4>
+            <p>Email: ccare@bakenbloom.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <table>
+              <tr>
+                <td>
+                  <a href="https://twitter.com/i/flow/login">
+                    <i class="fab fa-twitter socialIcons"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://www.facebook.com/">
+                    <i class="fab fa-facebook socialIcons"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://accounts.google.com">
+                    <i class="fas fa-envelope socialIcons"></i>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-4">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <i>
+                  <a href="IndexPage.html">Home</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="MenuPage.html">Menu</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="AboutPage.html">About Us</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="ContactPage.html">Contact Us</a>
+                </i>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4>Location</h4>
+            <p>Bake & Bloom <br> 123 Sweet Street <br> Sector Omega, Greater Noida <br> Uttar Pradesh <br> PIN: 201308 <br> India <br>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <hr style="background:#FFFFFF">
+            <center>
+              <img src="..\FullStackDevelopmentProject\Images\logo.png" alt="Bake & Bloom Logo" width="92px;">
+            </center>
+            <p>&copy; 2023 Bake & Bloom. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!------------------------------------------------------------------------------------------------>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      function navButton() {
+        var x = document.getElementById("myTopnav");
+        x.classList.toggle("responsive");
+        var mButton = document.getElementById("mbutton");
+        mButton.classList.toggle("fa");
+        mButton.classList.toggle("fa-bars");
+        mButton.classList.toggle("fas");
+        mButton.classList.toggle("fa-times");
+      }
+
+      function placeOrder() {
+        document.getElementById("orderForm").style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
+      }
+
+      function anotherOne() {
+        document.getElementById("orderForm").style.display = "block";
+        document.getElementById("confirmation").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

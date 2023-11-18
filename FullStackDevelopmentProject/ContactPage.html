@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Agbalumo">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      /*THIS IS FOR THE NAVBAR FOR THE CONTACT US SECTION*/
+      .panel p {
+        margin-top: 0;
+        font-size: 20px;
+      }
+
+      .contactSection {
+        margin-top: 100px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .contactSection h1 {
+        background-color: #ffdab9;
+        border-top: 20px solid white;
+        color: #800000;
+        font-size: 28px;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        width: 50vw;
+      }
+
+      .contactOptions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        background-color: rgba(165, 42, 42, 0.5);
+      }
+
+      .option {
+        flex: 1;
+        max-width: 250px;
+        margin: 15px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .option:hover {
+        transform: scale(1.05);
+        background-color: #fad9c4;
+        color: #800000;
+      }
+
+      .option i {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+
+      /*THIS IS FOR THE NAVBAR FOR THE CONTACT US SECTION*/
+      /*THIS IS FOR THE NAVBAR FOR THE WRITE TO US SECTION*/
+      .writeToUs {
+        margin-top: 50px;
+      }
+
+      .writeToUs form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: rgba(165, 42, 42, 0.5);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .writeToUs form label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .writeToUs form textarea,
+      .writeToUs form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .writeToUs form input[type="submit"] {
+        background-color: #684a52;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .writeToUs form input[type="submit"]:hover {
+        background-color: #533940;
+      }
+
+      @media screen and (max-width: 800px) {
+        .contactSection {
+          margin-top: 20px;
+        }
+      }
+
+      /*THIS IS FOR THE NAVBAR FOR THE WRITE TO US SECTION*/
+    </style>
+  </head>
+  <body>
+    <div id="navbarExclusive">
+      <div class="overlay">
+        <div id="navbar-right">
+          <a href="IndexPage.html">Home</a>
+          <a href="MenuPage.html">Menu</a>
+          <a href="AboutPage.html">About Us</a>
+          <a class="active" href="ContactPage.html">Contact Us</a>
+        </div>
+        <a href="Home.html">
+          <img src="..\FullStackDevelopmentProject\Images\logo.png" alt="Bake & Bloom Logo" id="logo">
+        </a>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="miniNav">
+      <button id="mbutton" class="icon" onclick="navButton()">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="topnav" id="myTopnav">
+        <a href="IndexPage.html">Home</a>
+        <a href="MenuPage.html">Menu</a>
+        <a href="AboutPage.html">About Us</a>
+        <a class="active" href="ContactPage.html">Contact Us</a>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="contactSection">
+      <center><h1>Contact Us</h1></center>
+      <h4>We'd love to hear from you! Feel free to reach out through the following channels:</h4>
+      <div class="contactOptions">
+        <div class="option">
+          <i class="fas fa-envelope"></i>
+          <p>Email: <br>
+            <a href="mailto:customercare@bakenbloom.com">ccare@bakenbloom.com</a>
+          </p>
+        </div>
+        <div class="option">
+          <i class="fas fa-phone"></i>
+          <p>Phone: <br>+1 (123) 456-7890 </p>
+        </div>
+        <div class="option">
+          <i class="fab fa-twitter"></i>
+          <p>Twitter: <br <a href="https://twitter.com/bakenbloom" target="_blank">@bakenbloom</a>
+          </p>
+        </div>
+        <div class="option">
+          <i class="fab fa-facebook"></i>
+          <p>Facebook: <br>
+            <a href="https://www.facebook.com/bakenbloom" target="_blank">Bake & Bloom Bakery</a>
+          </p>
+        </div>
+        <div class="option">
+          <i class="fab fa-snapchat"></i>
+          <p>Snapchat: <br>@bakenbloom </p>
+        </div>
+        <div class="option">
+          <i class="fab fa-instagram"></i>
+          <p>Instagram: <br>
+            <a href="https://www.instagram.com/bakenbloom" target="_blank">@bakenbloom</a>
+          </p>
+        </div>
+        <div class="option">
+          <i class="fab fa-reddit"></i>
+          <p>Reddit: <br>
+            <a href="https://www.reddit.com/user/bakenbloom" target="_blank">/user/bakenbloom</a>
+          </p>
+        </div>
+      </div>
+      <hr>
+      <!------------------------------------------------------------------------------------------------>
+      <div class="writeToUs">
+        <h4>Have comments or feedback? Send us a message below:</h4>
+        <form onsubmit="enterInput(); return false;">
+          <label for="comments">Comments:</label>
+          <textarea id="comments" name="comments" rows="4" cols="50" required></textarea>
+          <br>
+          <label for="email">Your Email ID:</label>
+          <input type="email" id="email" name="email" placeholder="example@example.xyz" required>
+          <br>
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your Name here" required>
+          <br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Contact Us</h4>
+            <p>Email: ccare@bakenbloom.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <table>
+              <tr>
+                <td>
+                  <a href="https://twitter.com/i/flow/login">
+                    <i class="fab fa-twitter socialIcons"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://www.facebook.com/">
+                    <i class="fab fa-facebook socialIcons"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://accounts.google.com">
+                    <i class="fas fa-envelope socialIcons"></i>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-4">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <i>
+                  <a href="IndexPage.html">Home</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="MenuPage.html">Menu</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="AboutPage.html">About Us</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="ContactPage.html">Contact Us</a>
+                </i>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4>Location</h4>
+            <p>Bake & Bloom <br> 123 Sweet Street <br> Sector Omega, Greater Noida <br> Uttar Pradesh <br> PIN: 201308 <br> India <br>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <hr style="background:#FFFFFF">
+            <center>
+              <img src="..\FullStackDevelopmentProject\Images\logo.png" alt="Bake & Bloom Logo" width="92px;">
+            </center>
+            <p>&copy; 2023 Bake & Bloom. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!------------------------------------------------------------------------------------------------>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      function navButton() {
+        var x = document.getElementById("myTopnav");
+        x.classList.toggle("responsive");
+        var mButton = document.getElementById("mbutton");
+        mButton.classList.toggle("fa");
+        mButton.classList.toggle("fa-bars");
+        mButton.classList.toggle("fas");
+        mButton.classList.toggle("fa-times");
+      }
+
+      function enterInput() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        alert("Thank you for your query/comment, " + name + "! Expect a response on your email," + email + ",from our Customer Care withint 2 to 3 working days.");
+      }
+    </script>
+  </body>
+</html>

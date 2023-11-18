@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Agbalumo">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      /*THIS IS GENERAL*/
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+      }
+      /*THIS IS GENERAL*/
+
+      /*THIS IS FOR THE NAVBAR FOR LAPTOP*/
+      #navbarExclusive {
+        overflow: hidden;
+        background: url('../FullStackDevelopmentProject/Images/indexImage.png') center/cover no-repeat;
+        padding: 10px;
+        height: 100vh;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        transition: 0.1s;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99;
+        display: block;
+      }
+
+      #navbarExclusive a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+      }
+
+      #navbarExclusive a:hover:not(.active) {
+        background-color: #dddddd;
+        color: black;
+      }
+
+      #navbarExclusive a.active {
+        color: #F9CB72;
+        font-weight: 1000;
+      }
+
+      #navbar-right {
+        float: right;
+        padding-top: 20px;
+        padding-right: 20px;
+        transition: 0.1s;
+      }
+
+      #navbar-left {
+        float: left;
+        text-align: center;
+        display: block;
+        padding-top: 10vh;
+      }
+
+      #navbar-left h1,
+      #navbar-left p {
+        margin: 0;
+      }
+
+      #navbar-left h1 {
+        font-family: 'Poppins';
+        color: #FFFFFF;
+        font-size: 80px;
+      }
+
+      #navbar-left p {
+        color: lightgray;
+        padding: 30px;
+        font-family: 'Poppins';
+        line-height: 50px;
+        font-size: 20px;
+      }
+
+      #emphasizing {
+        color: #F9CB72;
+        font-family: 'Lobster';
+        font-size: 100px;
+      }
+
+      .overlay {
+        background: rgba(104, 74, 82, 0.8);
+        height: 97.5vh;
+        border: 10px;
+        width: 100%;
+        margin: 0;
+      }
+
+      @keyframes moveDown {
+        0% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(10px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .downarrow {
+        animation: moveDown 1s infinite;
+      }
+
+      @media screen and (max-width: 1000px) {
+        #navbar-left h1 {
+          font-size: 40px;
+        }
+
+        #emphasizing {
+          font-size: 80px;
+        }
+
+        #navbar-left p {
+          line-height: 30px;
+          font-size: 15px;
+          color: white;
+        }
+      }
+
+      /*THIS IS FOR THE NAVBAR FOR LAPTOP*/
+
+      /*THIS IS FOR THE SECONDARY HEADER*/
+      #secondaryHeader {
+        display: none;
+        margin-top: 40px;
+        background: url('../FullStackDevelopmentProject/Images/indexImage.png') center/cover no-repeat;
+        padding: 20px;
+        padding-top: 30px;
+      }
+
+      .ol {
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      /*THIS IS FOR THE SECONDARY HEADER*/
+
+      /*THIS IS FOR THE NAVBAR FOR TABLET*/
+      .miniNav {
+        overflow: hidden;
+        display: none;
+        background-color: #684a52;
+        font-size: 30px;
+        ;
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        top: 0;
+      }
+
+      .topnav {
+        overflow: hidden;
+        background-color: #684a52;
+      }
+
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .topnav a:hover:not(.active):hover {
+        background-color: #dddddd;
+        color: black;
+      }
+
+      .topnav a.active {
+        background-color: #F9CB72;
+        color: white;
+      }
+
+      .topnav .icon {
+        display: none;
+      }
+
+      .icon {
+        background-color: #684a52;
+        color: #ffffff;
+        border: none;
+      }
+
+      @media screen and (max-width: 1000px) {
+        #navbarExclusive {
+          display: none;
+        }
+
+        #secondaryHeader {
+          display: block;
+        }
+
+        .miniNav {
+          display: block;
+        }
+
+        .topnav a {
+          display: none;
+        }
+
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+
+        .topnav.responsive {
+          position: relative;
+        }
+
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: center;
+        }
+      }
+
+      /*THIS IS FOR THE NAVBAR FOR TABLET*/
+
+      /*THIS IS FOR THE ABOUT SECTION*/
+      .about {
+        padding: 50px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .about-content {
+        flex: 1;
+        margin-right: 20px;
+      }
+
+      .aboutSection {
+        margin-top: 120px;
+        background-color: #ffdab9;
+        border-top: 20px solid white;
+      }
+
+      .aboutSection h2 {
+        color: #800000;
+        font-size: 28px;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        width: 50vw;
+      }
+
+      .about-content p {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      #aboutButton {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #F9CB72;
+        color: #684a52;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #aboutButton:hover {
+        background-color: #684a52;
+        color: #F9CB72;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .aboutSection {
+          margin-top: 20px;
+        }
+
+        .about-content p {
+          font-size: 15px;
+        }
+      }
+
+      /*THIS IS FOR THE ABOUT SECTION*/
+
+      /*THIS IS FOR THE DIVIDER*/
+      .divider {
+        background: url('../FullStackDevelopmentProject/Images/divider.jpg');
+        background-repeat: no-repeat;
+        background-blend-mode: darken;
+        background-size: cover;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+      }
+
+      blockquote {
+        background-color: rgba(0, 0, 0, 0.5);
+        font-family: "Agbalumo";
+        text-align: center;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 30px;
+        padding: 20px;
+        color: #ffffff;
+      }
+
+      /*THIS IS FOR THE DIVIDER*/
+
+      /*THIS IS FOR THE OFFER SECTION*/
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .whatWeOfferSection {
+        text-align: center;
+        background-color: #ffdab9;
+      }
+
+      .whatWeOfferSection h2 {
+        color: #800000;
+        font-size: 28px;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        width: 50vw;
+      }
+
+      .category {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .card {
+        width: 300px;
+        margin: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .card-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .card-overlay {
+        padding: 20px;
+        text-align: center;
+        background-color: #fff;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .card {
+          width: 100%;
+        }
+
+        .card:hover {
+          transform: scale(1);
+        }
+
+        blockquote {
+          margin-top: 30px;
+          margin-bottom: 30px;
+          font-size: 20px;
+        }
+      }
+
+      /*THIS IS FOR THE OFFER SECTION*/
+
+      /*THIS IS FOR THE FAVORITES SECTION*/
+      .customerFavoritesSection {
+        background-color: #ffdab9;
+        text-align: center;
+      }
+
+      .customerFavoritesSection h2 {
+        color: #800000;
+        font-size: 28px;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        width: 50vw;
+      }
+
+      .tab {
+        overflow-x: auto;
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+
+      .tab button {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        color: white;
+      }
+
+      .tab button:hover {
+        background-color: #8b4513;
+      }
+
+      .tab button.active {
+        background-color: #000000;
+        color: #F9CB72;
+      }
+
+      .tabcontent {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        background: rgba(139, 69, 19, 0.5);
+      }
+
+      .itemCard p {
+        background: rgba(0, 0, 0, 0.7);
+        color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 20px;
+      }
+
+      .tabcontent img {
+        max-width: 80%;
+        height: auto;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .tab {
+          flex-wrap: wrap;
+        }
+
+        .tab button {
+          flex: 1 0 100%;
+        }
+
+        .itemCard p {
+          font-size: 15px;
+        }
+
+        .tabcontent img {
+          width: 50vw;
+          height: auto;
+          max-width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .tab button {
+          font-size: 14px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .tabcontent img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      /*THIS IS FOR THE FAVORITES SECTION*/
+
+      /*THIS IS FOR THE TESTIMONIALS SECTION*/
+      .testimonials {
+        background-color: #ffffff;
+        padding: 50px;
+      }
+
+      .testimonials h2 {
+        color: #800000;
+        font-size: 28px;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        width: 50vw;
+      }
+
+      .testimonial-text,
+      .testimonial-name {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .carousel-inner {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      /*THIS IS FOR THE TESTIMONIALS SECTION*/
+
+      /*THIS IS FOR THE NAVBAR FOR THE FOOTER*/
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 30px 0;
+        font-size: 16px;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      footer h4 {
+        color: #F9CB72;
+        margin-bottom: 20px;
+      }
+
+      footer p {
+        margin-bottom: 15px;
+      }
+
+      footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      footer ul li {
+        margin-bottom: 10px;
+      }
+
+      footer ul li a {
+        transition: color 0.3s;
+      }
+
+      footer ul li a:hover {
+        color: #F9CB72;
+      }
+
+      .socialIcons {
+        padding: 12px;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+
+      .socialIcons:hover {
+        color: #F9CB72;
+      }
+
+      /*THIS IS FOR THE NAVBAR FOR THE FOOTER*/
+    </style>
+  </head>
+  <body>
+    <div id="navbarExclusive">
+      <div class="overlay">
+        <div id="navbar-right">
+          <a class="active" href="IndexPage.html">Home</a>
+          <a href="MenuPage.html">Menu</a>
+          <a href="AboutPage.html">About Us</a>
+          <a href="ContactPage.html">Contact Us</a>
+        </div>
+        <div id="navbar-left">
+          <h1>Welcome to <br>
+            <span id="emphasizing">Bake & Bloom</span>
+          </h1>
+          <p> Indulge your senses in the world of irresistible flavors and artisanal delights. Our bakery is a haven for those who appreciate the art of baking. From freshly baked bread to decadent pastries, each creation is a masterpiece crafted with love and passion. <br>
+            <br>
+          </p>
+          <center>
+            <i class="fas fa-arrow-down downarrow" style="color:#ffffff; font-size:30px"></i>
+          </center>
+        </div>
+        <a href="Home.html">
+          <img src="..\FullStackDevelopmentProject\Images\logo.png" alt="Bake & Bloom Logo" id="logo" style="display:none;">
+        </a>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="miniNav">
+      <button id="mbutton" class="icon" onclick="navButton()">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="topnav" id="myTopnav">
+        <a href="IndexPage.html" class="active">Home</a>
+        <a href="MenuPage.html">Menu</a>
+        <a href="AboutPage.html">About Us</a>
+        <a href="ContactPage.html">Contact Us</a>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div id="secondaryHeader">
+      <div class="ol">
+        <h1 style="font-family:'Poppins'; color: white; font-size: 50px;">Welcome to <br>
+          <span style="font-family:'Lobster'; color: #F9CB72; font-size: 70px;">Bake & Bloom</span>
+        </h1>
+        <p style="color:white;">Indulge your senses in the world of irresistible flavors and artisanal delights. Our bakery is a haven for those who appreciate the art of baking. From freshly baked bread to decadent pastries, each creation is a masterpiece crafted with love and passion. <br>
+          <br>
+        </p>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="aboutSection">
+      <center><h2>Who We Are</h2></center>
+    </div>
+    <div class="about">
+      <div class="about-content">
+        <center>
+          <p>Here at Bake & Bloom, we excel at breathing life into our artistic creations, whether they be sweet pastries or savory sandwiches. Each masterpiece is a true testament to our unwavering dedication to the art of baking.</p>
+          <p>As you step into our world, you'll be greeted by the delightful aroma of freshly baked goods and soon discover that every bite tells a story of passion and precision. Our commitment to using only the finest ingredients, combined with meticulous craftsmanship and a sprinkle of love, ensure that each treat becomes a celebration of flavors, guaranteed to bring joy to every palate.</p>
+          <p>Within the heart of our bakery lies a captivating narrative that goes beyond just flour and sugar – it's a story woven with tradition, innovation, and a genuine love for baking. Every single cake, cookie, and pastry is a reflection of our culinary journey. We invite you to join us in savoring the sweet moments that define our commitment to creating memories, one delightful bite at a time.</p>
+          <center>
+            <form action="AboutPage.html" method="post">
+              <button type="submit" name="button" id="aboutButton">Know More</button>
+            </form>
+          </center>
+      </div>
+    </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="divider">
+      <blockquote> Come for the <span style="color: #F9CB72">Sweets</span> and <span style="color: #F9CB72">Savories</span>
+        <br>Stay for the <span style="color: #F9CB72">Experience</span> and <span style="color: #F9CB72">Delicacies</span>
+      </blockquote>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="container">
+      <div class="whatWeOfferSection">
+        <center><h2>What We Offer</h2></center>
+      </div>
+      <div class="category">
+        <div class="card">
+          <img src="..\FullStackDevelopmentProject\Images\cake.jpg" alt="Cakes" class="card-image">
+          <div class="card-overlay">
+            <h5>Cakes</h5>
+            <p>Indulge in our heavenly cakes, meticulously crafted for your joyous celebrations. Each bite is a journey into sweetness!</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="..\FullStackDevelopmentProject\Images\pastries.jpg" alt="Pastries" class="card-image">
+          <div class="card-overlay">
+            <h5>Pastries</h5>
+            <p>Experience the perfect blend of flavors with our exquisite pastries. Delight in every layer of flakiness and goodness.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="..\FullStackDevelopmentProject\Images\cupcake.jpg" alt="Cupcakes" class="card-image">
+          <div class="card-overlay">
+            <h5>Cupcakes</h5>
+            <p>Our cupcakes are small delights that pack a big punch of flavor. Choose from a variety of unique and delectable options.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="..\FullStackDevelopmentProject\Images\brownies.jpg" alt="Cupcakes" class="card-image">
+          <div class="card-overlay">
+            <h5>Brownies and Tarts</h5>
+            <p>Our cupcakes are small delights that pack a big punch of flavor. Choose from a variety of unique and delectable options.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="..\FullStackDevelopmentProject\Images\bread.jpg" alt="Cupcakes" class="card-image">
+          <div class="card-overlay">
+            <h5>Bread</h5>
+            <p>Our cupcakes are small delights that pack a big punch of flavor. Choose from a variety of unique and delectable options.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="..\FullStackDevelopmentProject\Images\desserts.jpg" alt="Cupcakes" class="card-image">
+          <div class="card-overlay">
+            <h5>Desserts</h5>
+            <p>Our cupcakes are small delights that pack a big punch of flavor. Choose from a variety of unique and delectable options.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="customerFavoritesSection">
+      <center><h2>Here Are Some Customer Favorites</h2></center>
+    </div>
+    <div class="tab">
+      <center>
+        <table>
+          <tr>
+            <td>
+              <button class="tablinks" onclick="Dessert(event, 'Desserts')" id="default">Desserts</button>
+            </td>
+            <td>
+              <button class="tablinks" onclick="Dessert(event, 'Cupcakes')">Cupcakes</button>
+            </td>
+            <td>
+              <button class="tablinks" onclick="Dessert(event, 'Pastries')">Pastries</button>
+            </td>
+            <td>
+              <button class="tablinks" onclick="Dessert(event, 'Cakes')">Cakes</button>
+            </td>
+            <td>
+              <button class="tablinks" onclick="Dessert(event, 'Brownies')">Brownies</button>
+            </td>
+            <td>
+              <button class="tablinks" onclick="Dessert(event, 'Tarts')">Tarts</button>
+            </td>
+          </tr>
+      </center>
+      </table>
+    </div>
+    <div id="Desserts" class="tabcontent">
+      <div class="container featureHighlights">
+        <div class="row">
+          <div class="col-md-8">
+            <center>
+              <h2>Heavenly Bliss Delight</h2>
+              <img src="..\FullStackDevelopmentProject\Images\Delight.jpg" alt="Heavenly Bliss Delight" class="suggested">
+            </center>
+          </div>
+          <div class="col-md-4 itemCard">
+            <p>This divine creation is a celebration of flavors that dance on your taste buds. Imagine layers of decadent richness paired with the perfect level of sweetness. It's not just a dessert; it's a symphony of indulgence that leaves you in a state of heavenly bliss. <br>
+              <br>
+              <b>People's View:</b> Customers often describe the Heavenly Bliss Delight as a transformative experience. The combination of rich and sweet flavors creates a sensation that lingers, making it a favorite among those who seek an extraordinary dessert adventure. Truly, a dessert that caters to those that have a sweet tooth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Cupcakes" class="tabcontent">
+      <div class="container featureHighlights">
+        <div class="row">
+          <div class="col-md-8">
+            <center>
+              <center>
+                <h2>Sunshine Lemon Drop</h2>
+                <img src="..\FullStackDevelopmentProject\Images\Lemon.jpg" alt="Sunshine Lemon Drop" class="suggested">
+              </center>
+          </div>
+          <div class="col-md-4 itemCard">
+            <p>These cupcakes bring a sunny delight to every bite. With a perfect balance of citrusy freshness and sweet indulgence, they capture the essence of a lemony sunshine in a delightful cupcake form. <br>
+              <br>
+              <b>People's View:</b> Customers love the Sunshine Lemon Drop Cupcake for its refreshing and uplifting flavor. It's often chosen as a mood-booster, brightening up moments with its citrusy charm. The perfect balance of sweetness and sourness makes it a popular choice for those who enjoy a light and flavorful cupcake. They are especially popular among the children who would order them for Birthdays. Truly, a perfect confectionary that conveys a vibrant and memorable childhood.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Pastries" class="tabcontent">
+      <div class="container featureHighlights">
+        <div class="row">
+          <div class="col-md-8">
+            <center>
+              <h2>Floral Berry Blossom</h2>
+              <img src="..\FullStackDevelopmentProject\Images\Floral.jpg" alt="Floral Berry Blossom" class="suggested">
+            </center>
+          </div>
+          <div class="col-md-4 itemCard">
+            <p>Delicate layers of pastry embrace a burst of floral-infused berries. This pastry is a harmonious blend of beauty and delectable flavors, making it a delightful choice for those who appreciate a touch of floral sweetness. <br>
+              <br>
+              <b>People's View:</b> The Floral Berry Blossom Pastry is a favorite among customers who seek a unique and visually stunning pastry. The combination of floral notes and fresh berries creates a memorable experience, often described as both elegant and delicious. They are especially popular during Valentine's Day, where many deem it to be the perfect gift to those they cherish. After all, what is a better way to convey their feelings if not with a dish that is both sweet and elegant.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Cakes" class="tabcontent">
+      <div class="container featureHighlights">
+        <div class="row">
+          <div class="col-md-8">
+            <center>
+              <h2>Velvet Elegance</h2>
+              <img src="..\FullStackDevelopmentProject\Images\Velvet.jpg" alt="Velvet Elegance" class="suggested">
+            </center>
+          </div>
+          <div class="col-md-4 itemCard">
+            <p>This cake is a masterpiece of velvety smoothness. Picture layers of moist goodness with a touch of elegance in every slice. It's not just a cake; it's a sensory experience that combines texture, flavor, and visual appeal. <br>
+              <br>
+              <b>People's View:</b> Customers admire the Velvet Elegance Cake for its luxurious texture and sophisticated flavor profile. It's often chosen for special occasions, where the combination of moist layers and elegant presentation adds a touch of refinement to celebrations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Brownies" class="tabcontent">
+      <div class="container featureHighlights">
+        <div class="row">
+          <div class="col-md-8">
+            <center>
+              <h2>Decadent Fudge Fantasy</h2>
+              <img src="..\FullStackDevelopmentProject\Images\Fantasy.jpg" alt="Decadent Fudge Fantasy" class="suggested">
+            </center>
+          </div>
+          <div class="col-md-4 itemCard">
+            <p>Step into a world of chocolate ecstasy with these fudgy brownies. Each bite is a journey into decadence, offering a fantasy for chocolate enthusiasts. The fudgy texture and intense chocolate flavor make it a true indulgence. <br>
+              <br>
+              <b>People's View:</b> The Decadent Fudge Fantasy Brownies have a dedicated fan base. Customers appreciate the rich and intense chocolate experience, often describing it as a chocolate lover's dream come true. It's a go-to choice for those craving a deeply satisfying chocolate treat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Tarts" class="tabcontent">
+      <div class="container featureHighlights">
+        <div class="row">
+          <div class="col-md-8">
+            <center>
+              <h2>Tangy Citrus Burst</h2>
+              <img src="..\FullStackDevelopmentProject\Images\Citrus.jpg" alt="Tangy Citrus Burst" class="suggested">
+              </cente>
+          </div>
+          <div class="col-md-4 itemCard">
+            <p>Embark on a journey of tantalizing citrusy goodness embraced by a flaky, buttery crust. The burst of tangy citrus flavors is perfectly balanced, creating a tart that's not just a treat for your taste buds but a work of art. <br>
+              <br>
+              <b>People's View:</b> Customers rave about the Tangy Citrus Burst Tart for its perfect balance of sweetness and tanginess. It's often described as a refreshing and delightful choice, leaving a lasting impression on those who appreciate a burst of citrus in their desserts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div id="testimonials" class="testimonials">
+      <center><h2>What People Say</h2></center>
+      <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <p style="color: #333" class="testimonial-text">"Amazing bakery! The cakes are delicious and the pastries are heavenly. Highly recommended!"</p>
+            <p style="color: #000000" class="testimonial-name">- John Doe</p>
+          </div>
+          <div class="carousel-item">
+            <p style="color: #333" class="testimonial-text">"Bake & Bloom never disappoints! The desserts are a work of art, and the flavors are outstanding."</p>
+            <p style="color: #000000" class="testimonial-name">- Jane Smith</p>
+          </div>
+          <div class="carousel-item">
+            <p style="color: #333" class="testimonial-text">"The desserts at Bake & Bloom are not just delicious; they are a work of art. Presentation and taste, both are top-notch."</p>
+            <p style="color: #000000" class="testimonial-name">- Sarah Thompson</p>
+          </div>
+          <div class="carousel-item">
+            <p style="color: #333" class="testimonial-text">"As a bread lover, I can say that Bake & Bloom's artisanal loaves are heavenly. Fresh, crusty, and simply divine."</p>
+            <p style="color: #000000" class="testimonial-name">- Daniel Rodriguez</p>
+          </div>
+          <div class="carousel-item">
+            <p style="color: #333" class="testimonial-text">"Bake & Bloom's cupcakes are the cutest and most delicious treats. Each one is a small package of happiness that brightens my day!"</p>
+            <p style="color: #000000" class="testimonial-name">- Amanda White</p>
+          </div>
+          <div class="carousel-item">
+            <p style="color: #333" class="testimonial-text">"I recently tried Bake & Bloom's brownies, and they exceeded my expectations. Rich, decadent, and pure indulgence. I'm hooked!"</p>
+            <p style="color: #000000" class="testimonial-name">- Christopher Lee</p>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="false" style="background-color:#684a52; border-radius:100px;"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="false" style="background-color:#684a52; border-radius:100px;"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Contact Us</h4>
+            <p>Email: ccare@bakenbloom.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <table>
+              <tr>
+                <td>
+                  <a href="https://twitter.com/i/flow/login">
+                    <i class="fab fa-twitter socialIcons"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://www.facebook.com/">
+                    <i class="fab fa-facebook socialIcons"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://accounts.google.com">
+                    <i class="fas fa-envelope socialIcons"></i>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-4">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <i>
+                  <a href="IndexPage.html">Home</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="MenuPage.html">Menu</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="AboutPage.html">About Us</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="ContactPage.html">Contact Us</a>
+                </i>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4>Location</h4>
+            <p>Bake & Bloom <br> 123 Sweet Street <br> Sector Omega, Greater Noida <br> Uttar Pradesh <br> PIN: 201308 <br> India <br>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <hr style="background:#FFFFFF">
+            <center>
+              <img src="..\FullStackDevelopmentProject\Images\logo.png" alt="Bake & Bloom Logo" width="92px;">
+            </center>
+            <p>&copy; 2023 Bake & Bloom. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!------------------------------------------------------------------------------------------------>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      window.onscroll = function() {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+          document.getElementById("navbarExclusive").style.height = "16vh";
+          document.getElementById("navbar-right").style.paddingTop = "3vh";
+          document.getElementById("logo").style.width = "80px";
+          document.getElementById("navbarExclusive").style.background = "#684a52";
+          document.getElementById("navbar-left").style.display = "none";
+          document.getElementById("logo").style.display = "block";
+        } else {
+          document.getElementById("navbarExclusive").style.height = "100vh";
+          document.getElementById("navbar-right").style.paddingTop = "20px";
+          document.getElementById("logo").style.width = "100px";
+          document.getElementById("logo").style.display = "none";
+          document.getElementById("navbarExclusive").style.background = "url('../FullStackDevelopmentProject/Images/indexImage.png') center/cover no-repeat";
+          document.getElementById("navbar-left").style.display = "block";
+        }
+      }
+
+      function navButton() {
+        var x = document.getElementById("myTopnav");
+        x.classList.toggle("responsive");
+        var mButton = document.getElementById("mbutton");
+        mButton.classList.toggle("fa");
+        mButton.classList.toggle("fa-bars");
+        mButton.classList.toggle("fas");
+        mButton.classList.toggle("fa-times");
+      }
+      document.getElementById("default").click();
+
+      function Dessert(evt, dessertName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(dessertName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+  </body>
+</html>

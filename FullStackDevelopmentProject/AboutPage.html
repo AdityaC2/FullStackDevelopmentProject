@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Agbalumo">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      /*THIS IS IN GENERAL*/
+      body {
+        background: url('../FullStackDevelopmentProject/Images/wallpaper1.jpg') repeat;
+        background-size: cover/contain;
+      }
+
+      /*THIS IS IN GENERAL*/
+      /*THIS IS FOR THE NAVBAR FOR THE ABOUT US SECTION*/
+      .header {
+        margin-top: 100px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .header p {
+        padding-left: 50px;
+        padding-right: 50px;
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 20px;
+      }
+
+      .header h1 {
+        background-color: #ffdab9;
+        color: #800000;
+        font-size: 28px;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        width: 50vw;
+      }
+
+      #emblem {
+        width: 30vw;
+        padding-bottom: 20px;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px;
+        height: 70vh;
+        overflow-y: auto;
+      }
+
+      .card h2 {
+        color: brown;
+      }
+
+      .card p {
+        text-align: left;
+        font-size: 1.4vw;
+      }
+
+      .card-icon {
+        font-size: 56px;
+        color: brown;
+        margin-right: 10px;
+        padding-bottom: 20px;
+      }
+
+      /*THIS IS FOR THE NAVBAR FOR THE ABOUT US SECTION*/
+      /*THIS IS FOR THE NAVBAR FOR THE FAQ SECTION*/
+      .faqSection {
+        background-color: #ffffff;
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .faqSection h2 {
+        background-color: #ffdab9;
+        color: #800000;
+        font-size: 28px;
+        padding: 20px;
+        margin-top: 0;
+        text-align: center;
+        font-weight: bold;
+        width: 50vw;
+      }
+
+      .accordion {
+        background-color: #684a52;
+        color: #fff;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 18px;
+        transition: 0.4s;
+        margin-bottom: 10px;
+        border-radius: 8px;
+      }
+
+      .accordion:hover {
+        background-color: #543b42;
+      }
+
+      .panel {
+        padding: 0 18px;
+        background-color: #fff;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        border-radius: 8px;
+      }
+
+      .panel p {
+        margin-top: 0;
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .header {
+          margin-top: 20px;
+        }
+
+        .card {
+          height: 50vh;
+        }
+
+        .card p {
+          text-align: center;
+          font-size: 15px;
+          overflow-y: scroll;
+        }
+
+        .card h2 {
+          text-align: center;
+          font-size: 20px;
+        }
+
+        .card-icon {
+          font-size: 36px;
+          color: brown;
+          margin-right: 10px;
+          padding-bottom: 20px;
+        }
+
+        .faqSection {
+          padding-top: 0;
+        }
+
+        .accordion {
+          font-size: 15px;
+          text-align: center;
+        }
+
+        .panel p {
+          font-size: 15px;
+          text-align: center;
+        }
+      }
+
+      /*THIS IS FOR THE NAVBAR FOR THE FAQ SECTION*/
+    </style>
+  </head>
+  <body>
+    <div id="navbarExclusive">
+      <div class="overlay">
+        <div id="navbar-right">
+          <a href="IndexPage.html">Home</a>
+          <a href="MenuPage.html">Menu</a>
+          <a class="active" href="AboutPage.html">About Us</a>
+          <a href="ContactPage.html">Contact Us</a>
+        </div>
+        <a href="Home.html">
+          <img src="..\FullStackDevelopmentProject\Images\logo.png" alt="Bake & Bloom Logo" id="logo">
+        </a>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="miniNav">
+      <button id="mbutton" class="icon" onclick="navButton()">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="topnav" id="myTopnav">
+        <a href="IndexPage.html">Home</a>
+        <a href="MenuPage.html">Menu</a>
+        <a class="active" href="AboutPage.html">About Us</a>
+        <a href="ContactPage.html">Contact Us</a>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="header">
+      <center><h1>About Us</h1></center>
+      <center>
+        <img src="..\FullStackDevelopmentProject\Images\logo.png" alt="logo" id="emblem">
+      </center>
+      <p style="background-color: white;">Welcome to Bake and Bloom Bakery, where every delightful bite tells a story of passion, craftsmanship, and the joy of creating something extraordinary. Our journey began with a simple idea: to infuse a touch of magic into the daily lives of our customers through the art of baking. </p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <h2>
+                <i class="fas fa-seedling card-icon"></i>
+                <br>The Seeds of Inspiration
+              </h2>
+              <p> In a cozy kitchen nestled in the heart of a bustling city, our founder discovered his love for baking at an early age. Inspired by her grandmother's secret recipes and the vibrant blooms in the garden, he embarked on a culinary adventure, combining traditional baking techniques with a modern, artistic flair. </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <h2>
+                <i class="fas fa-cookie card-icon"></i>
+                <br>Crafting Moments, One Recipe at a Time
+              </h2>
+              <p> Each recipe is a labor of love, carefully curated to evoke nostalgia and create new memories. Our skilled bakers, with years of expertise, handpick the finest ingredients to ensure every confection is a masterpiece. From the warm aroma of freshly baked bread to the delicate sweetness of pastries, we take pride in crafting moments that linger on your palate and in your heart. </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <h2>
+                <i class="fas fa-leaf card-icon"></i>
+                <br>Beyond Flour and Sugar
+              </h2>
+              <p> Bake & Bloom is not just a bakery; it's a celebration of life's sweetest moments. We believe in community, connection, and giving back. That's why we source our ingredients locally whenever possible, support sustainable practices, and actively participate in local events and charities. Our goal is to not only satisfy your taste buds but also contribute to the well-being of our community. </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <h2>
+                <i class="fas fa-seedling card-icon"></i>
+                <br>A Blossoming Future
+              </h2>
+              <p> As we continue to grow, our commitment to quality and creativity remains unwavering. We invite you to be a part of our story, to savor the flavors of tradition and innovation, and to share in the joy that comes from a well-crafted pastry. Whether you're here for your daily bread or a celebratory cake, we're honored to be a part of your journey. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <div class="faqSection">
+      <center><h2>Frequently Asked Questions</h2></center>
+      <button class="accordion">What types of baked goods do you offer?</button>
+      <div class="panel">
+        <p>We offer a diverse range of baked goods, including artisan bread, delectable pastries, custom cakes, cookies, and more. Our menu is crafted with passion and attention to detail to satisfy a variety of tastes. Visit the <a href="MenuPage.html">Menu Page</a> for more details. </p>
+      </div>
+      <button class="accordion">Do you offer gluten-free or vegan options?</button>
+      <div class="panel">
+        <p>Yes, we understand the importance of catering to various dietary preferences. We have gluten-free and vegan options available, and an order placement can be made to exclude/substitute certain ingredients.</p>
+      </div>
+      <button class="accordion">Can I place a custom order for a special occasion?</button>
+      <div class="panel">
+        <p>Absolutely! We love creating special treats for your celebrations. Please contact us (Ph: +1 (123) 456-7890; email: order@bakenbloom.com) in advance to discuss your preferences, and we'll work together to design the perfect custom baked goods for your event.</p>
+      </div>
+      <button class="accordion">Do you use locally sourced ingredients?</button>
+      <div class="panel">
+        <p>Yes, we are committed to supporting local farmers and businesses. Many of our ingredients are locally sourced to ensure freshness and to contribute to the community.</p>
+      </div>
+      <button class="accordion">What are your business hours?</button>
+      <div class="panel">
+        <p>Our regular business hours are 9:00am to 5:00pm. Any variations, especially during holidays or special occasions, will be communicated in advance on our website and social media.</p>
+      </div>
+      <button class="accordion">How can I stay updated on your menu and promotions?</button>
+      <div class="panel">
+        <p>Stay connected with us through our website and social media channels for the latest updates on our menu, seasonal offerings, and special promotions. You can also subscribe to our newsletter for exclusive deals.</p>
+      </div>
+      <button class="accordion">Do you cater events or provide wholesale options?</button>
+      <div class="panel">
+        <p>Yes, we offer catering services for events, and we also provide wholesale options for businesses. Contact us to discuss your specific needs, and we'll be happy to accommodate.</p>
+      </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Contact Us</h4>
+            <p>Email: ccare@bakenbloom.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <table>
+              <tr>
+                <td>
+                  <a href="https://twitter.com/i/flow/login">
+                    <i class="fab fa-twitter socialIcons"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://www.facebook.com/">
+                    <i class="fab fa-facebook socialIcons"></i>
+                  </a>
+                </td>
+                <td>
+                  <a href="https://accounts.google.com">
+                    <i class="fas fa-envelope socialIcons"></i>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-4">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <i>
+                  <a href="IndexPage.html">Home</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="MenuPage.html">Menu</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="AboutPage.html">About Us</a>
+                </i>
+              </li>
+              <li>
+                <i>
+                  <a href="ContactPage.html">Contact Us</a>
+                </i>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4>Location</h4>
+            <p>Bake & Bloom <br> 123 Sweet Street <br> Sector Omega, Greater Noida <br> Uttar Pradesh <br> PIN: 201308 <br> India <br>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <hr style="background:#FFFFFF">
+            <center>
+              <img src="..\FullStackDevelopmentProject\Images\logo.png" alt="Bake & Bloom Logo" width="92px;">
+            </center>
+            <p>&copy; 2023 Bake & Bloom. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!------------------------------------------------------------------------------------------------>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      function navButton() {
+        var x = document.getElementById("myTopnav");
+        x.classList.toggle("responsive");
+        var mButton = document.getElementById("mbutton");
+        mButton.classList.toggle("fa");
+        mButton.classList.toggle("fa-bars");
+        mButton.classList.toggle("fas");
+        mButton.classList.toggle("fa-times");
+      }
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
